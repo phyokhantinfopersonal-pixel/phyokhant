@@ -1,101 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <!-- <title>Phyo Khant | DevOps Engineer</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.6;
-        }
-        header {
-            background: #1e293b;
-            padding: 40px;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 10px;
-        }
-        .skills span {
-            display: inline-block;
-            background: #1e293b;
-            padding: 8px 12px;
-            margin: 5px;
-            border-radius: 6px;
-        }
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1e293b;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Phyo Khant</h1>
-    <p>Junior DevOps Engineer</p>
-    <p>Email: phyokhant.info.personal@gmail.com | GitHub: github.com/phyokhantinfopersonal-pixel</p>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <p>
-        Passionate DevOps Engineer focused on automation, cloud infrastructure, 
-        and continuous integration. Experienced in AWS, Docker, and Linux systems.
-    </p>
-</section>
-
-<section>
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>AWS</span>
-        <span>Docker</span>
-        <span>Linux</span>
-        <span>Terraform</span>
-        <span>Kubernetes</span>
-        <span>CI/CD</span>
-        <span>Git</span>
-    </div>
-</section>
-
-<section>
-    <h2>Projects</h2>
-    <p><strong>AWS Cost Automation</strong> – Automated 6-month cost reporting using Python and AWS CLI.</p>
-    <p><strong>CI/CD Pipeline</strong> – Implemented Docker-based pipeline with GitHub Actions.</p>
-</section>
-
-<section>
-    <h2>Experience</h2>
-    <p><strong>NOC Engineer</strong> – Monitored data center infrastructure, managed incidents, and maintained uptime.</p>
-</section>
-
-<footer>
-    © 2026 Phyo Khant
-</footer> -->
-
-</body>
-</html>
-
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -134,20 +37,17 @@
         font-family: var(--font-sans);
         line-height: 1.6;
         overflow-x: hidden;
-        background-image:
-          linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)),
+        background-image: linear-gradient(
+            rgba(13, 17, 23, 0.9),
+            rgba(13, 17, 23, 0.9)
+          ),
           linear-gradient(90deg, #161b22 1px, transparent 1px),
           linear-gradient(#161b22 1px, transparent 1px);
-        background-size:
-          100% 100%,
-          40px 40px,
-          40px 40px;
+        background-size: 100% 100%, 40px 40px, 40px 40px;
       }
 
       /* Typography */
-      h1,
-      h2,
-      h3 {
+      h1, h2, h3 {
         font-family: var(--font-mono);
         font-weight: 600;
       }
@@ -210,10 +110,48 @@
         letter-spacing: -1px;
       }
 
+      /* Typing Animation Logic */
+      .typing-container {
+        display: flex;
+        align-items: center;
+        min-height: 1.6em;
+      }
+
       .hero h2 {
         font-size: 1.5rem;
         color: var(--text-muted);
         margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .typing-text {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        border-right: none;
+        /* "Junior DevOps Engineer" is 22 characters */
+        animation: typing 3s steps(22, end) forwards;
+      }
+
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 22ch; }
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 1.4rem;
+        background-color: var(--primary-glow);
+        animation: blink 1s step-end infinite;
+        margin-left: 5px;
       }
 
       .btn-primary {
@@ -235,7 +173,7 @@
         transform: translateY(-2px);
       }
 
-      /* YAML Code Window (About Section) */
+      /* YAML Code Window */
       .code-window {
         background: var(--surface-color);
         border-radius: 8px;
@@ -260,15 +198,9 @@
         display: inline-block;
         margin-right: 8px;
       }
-      .dot.red {
-        background-color: #ff5f56;
-      }
-      .dot.yellow {
-        background-color: #ffbd2e;
-      }
-      .dot.green {
-        background-color: #27c93f;
-      }
+      .dot.red { background-color: #ff5f56; }
+      .dot.yellow { background-color: #ffbd2e; }
+      .dot.green { background-color: #27c93f; }
 
       .window-title {
         margin-left: 15px;
@@ -284,15 +216,9 @@
         overflow-x: auto;
       }
 
-      .key {
-        color: #ff7b72;
-      }
-      .string {
-        color: #a5d6ff;
-      }
-      .comment {
-        color: #8b949e;
-      }
+      .key { color: #ff7b72; }
+      .string { color: #a5d6ff; }
+      .comment { color: #8b949e; }
 
       /* Skills Matrix */
       .section-title {
@@ -336,7 +262,7 @@
         transform: translateY(-3px);
       }
 
-      /* CI/CD Pipeline Timeline (Experience) */
+      /* Pipeline Timeline */
       .pipeline {
         position: relative;
         padding-left: 2rem;
@@ -418,7 +344,6 @@
         font-family: var(--font-mono);
       }
 
-      /* Footer */
       footer {
         text-align: center;
         padding: 2rem 0;
@@ -428,40 +353,11 @@
         color: var(--text-muted);
       }
 
-      /* Animations */
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-      }
-      .cursor {
-        display: inline-block;
-        width: 10px;
-        height: 1.2rem;
-        background-color: var(--primary-glow);
-        animation: blink 1s step-end infinite;
-        vertical-align: middle;
-        margin-left: 5px;
-      }
-
       @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-        .stage-header {
-          flex-direction: column;
-        }
-        .stage-date {
-          margin-top: 0.5rem;
-          display: inline-block;
-        }
-        .nav-links {
-          display: none;
-        } /* Simplified for mobile */
+        .hero h1 { font-size: 2.5rem; }
+        .stage-header { flex-direction: column; }
+        .stage-date { margin-top: 0.5rem; display: inline-block; }
+        .nav-links { display: none; }
       }
     </style>
   </head>
@@ -482,7 +378,9 @@
           Last login: Fri Feb 20 2026 from 192.168.1.100
         </p>
         <h1>Hi, I'm <span class="highlight">Phyo Khant</span></h1>
-        <h2>Junior DevOps Engineer <span class="cursor"></span></h2>
+        <h2>
+            <span class="typing-text">Junior DevOps Engineer</span><span class="cursor"></span>
+        </h2>
         <p
           style="
             margin-bottom: 2rem;
@@ -535,29 +433,15 @@
         <h2 class="section-title">tech_stack.json</h2>
         <div class="skills-grid">
           <div class="skill-tag"><i class="fa-brands fa-aws"></i> AWS</div>
-          <div class="skill-tag">
-            <i class="fa-brands fa-docker"></i> Docker
-          </div>
-          <div class="skill-tag">
-            <i class="fa-solid fa-dharmachakra"></i> Kubernetes
-          </div>
-          <div class="skill-tag">
-            <i class="fa-brands fa-gitlab"></i> GitLab CI/CD
-          </div>
+          <div class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</div>
+          <div class="skill-tag"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</div>
+          <div class="skill-tag"><i class="fa-brands fa-gitlab"></i> GitLab CI/CD</div>
           <div class="skill-tag"><i class="fa-brands fa-linux"></i> Linux</div>
-          <div class="skill-tag">
-            <i class="fa-solid fa-terminal"></i> Bash/Python
-          </div>
-          <div class="skill-tag">
-            <i class="fa-brands fa-microsoft"></i> MS Sentinel
-          </div>
-          <div class="skill-tag">
-            <i class="fa-solid fa-shield-halved"></i> MS Defender
-          </div>
+          <div class="skill-tag"><i class="fa-solid fa-terminal"></i> Bash/Python</div>
+          <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> MS Sentinel</div>
+          <div class="skill-tag"><i class="fa-solid fa-shield-halved"></i> MS Defender</div>
           <div class="skill-tag"><i class="fa-solid fa-server"></i> Nginx</div>
-          <div class="skill-tag">
-            <i class="fa-solid fa-network-wired"></i> Data Center Infra
-          </div>
+          <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> Data Center Infra</div>
         </div>
       </section>
 
@@ -573,19 +457,10 @@
               <div class="stage-date">2025 – Present</div>
             </div>
             <ul class="stage-details">
-              <li>
-                Manage and automate CI/CD pipelines using GitLab CI/CD and AWS
-                services.
-              </li>
+              <li>Manage and automate CI/CD pipelines using GitLab CI/CD and AWS services.</li>
               <li>Maintain scalable and reliable cloud infrastructure.</li>
-              <li>
-                Develop Python scripts for AWS cost reporting and operational
-                monitoring.
-              </li>
-              <li>
-                Collaborate with teams to streamline deployments and improve
-                performance.
-              </li>
+              <li>Develop Python scripts for AWS cost reporting and operational monitoring.</li>
+              <li>Collaborate with teams to streamline deployments and improve performance.</li>
             </ul>
           </div>
 
@@ -598,14 +473,8 @@
               <div class="stage-date">2024 – 2025</div>
             </div>
             <ul class="stage-details">
-              <li>
-                Monitored and responded to security incidents using Microsoft
-                Sentinel and Defender.
-              </li>
-              <li>
-                Performed alert analysis, threat detection, and incident
-                escalation.
-              </li>
+              <li>Monitored and responded to security incidents using Microsoft Sentinel and Defender.</li>
+              <li>Performed alert analysis, threat detection, and incident escalation.</li>
             </ul>
           </div>
 
@@ -618,48 +487,9 @@
               <div class="stage-date">2023 – 2025</div>
             </div>
             <ul class="stage-details">
-              <li>
-                Maintained CRAC cooling, power supply, fire alarm (Novec 1230),
-                ELV systems, ATS, and generators.
-              </li>
-              <li>
-                Managed monitoring systems (CRAC, UPS, VDC, Poseidon) ensuring
-                high uptime.
-              </li>
+              <li>Maintained CRAC cooling, power supply, fire alarm, and generators.</li>
+              <li>Managed monitoring systems (UPS, VDC, Poseidon) ensuring high uptime.</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="education">
-        <h2 class="section-title">systemctl status education</h2>
-        <div class="pipeline">
-          <div class="stage">
-            <div class="stage-header">
-              <div class="stage-title">
-                BSc Computing
-                <span class="stage-company">@ Edinburgh Napier University</span>
-              </div>
-              <div class="stage-date">2020 – 2021</div>
-            </div>
-          </div>
-          <div class="stage">
-            <div class="stage-header">
-              <div class="stage-title">
-                Higher National Diploma (HND)
-                <span class="stage-company">@ Info Myanmar University</span>
-              </div>
-              <div class="stage-date">2018 – 2019</div>
-            </div>
-          </div>
-          <div class="stage">
-            <div class="stage-header">
-              <div class="stage-title">
-                Service A+ Engineering Certificate
-                <span class="stage-company">@ IMCS</span>
-              </div>
-              <div class="stage-date">2016</div>
-            </div>
           </div>
         </div>
       </section>
