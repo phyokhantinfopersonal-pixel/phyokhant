@@ -73,7 +73,7 @@
       }
       .nav-links a:hover { color: var(--primary-glow); }
 
-      /* Hero Section with Image Layout */
+      /* Hero Section */
       .hero {
         display: flex;
         align-items: center;
@@ -90,15 +90,14 @@
         z-index: 1;
       }
 
-      /* The Image Frame */
       .image-wrapper {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
         position: relative;
         border-radius: 20px;
         padding: 5px;
         background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-        box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+        box-shadow: 0 0 30px rgba(0, 255, 204, 0.15);
       }
 
       .image-wrapper img {
@@ -108,22 +107,9 @@
         border-radius: 15px;
         background: var(--surface-color);
         display: block;
-        filter: contrast(110%) brightness(90%);
       }
 
-      /* Glow effect behind image */
-      .image-wrapper::after {
-        content: "";
-        position: absolute;
-        inset: -10px;
-        background: var(--primary-glow);
-        filter: blur(30px);
-        opacity: 0.15;
-        z-index: -1;
-      }
-
-      /* Typing Animation */
-      .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; font-family: var(--font-mono); }
+      .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; font-family: var(--font-mono); }
       .hero h2 { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 2rem; min-height: 1.6em; }
       
       .typing-text {
@@ -158,10 +144,9 @@
       .btn-primary:hover {
         background: rgba(0, 255, 204, 0.1);
         box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-        transform: translateY(-2px);
       }
 
-      /* Skills/Experience/Etc (Inherited Styles) */
+      /* Sections */
       .section-title { font-size: 2rem; margin-bottom: 2rem; display: flex; align-items: center; }
       .section-title::before { content: "./"; color: var(--primary-glow); margin-right: 10px; }
 
@@ -169,31 +154,31 @@
       .window-header { background: #010409; padding: 0.8rem 1rem; display: flex; align-items: center; border-bottom: 1px solid #30363d; }
       .dot { height: 12px; width: 12px; border-radius: 50%; margin-right: 8px; }
       .dot.red { background: #ff5f56; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #27c93f; }
-      .code-content { padding: 1.5rem; font-family: var(--font-mono); font-size: 0.95rem; }
+      .code-content { padding: 1.5rem; font-family: var(--font-mono); font-size: 0.95rem; line-height: 1.7; }
       .key { color: #ff7b72; } .string { color: #a5d6ff; } .comment { color: #8b949e; }
 
       .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 5rem; }
       .skill-tag { background: var(--surface-color); border: 1px solid #30363d; padding: 0.7rem 1.2rem; border-radius: 4px; font-family: var(--font-mono); display: flex; align-items: center; gap: 10px; transition: 0.3s; }
       .skill-tag:hover { border-color: var(--primary-glow); transform: translateY(-3px); }
 
-      .pipeline { position: relative; padding-left: 2rem; margin-bottom: 5rem; border-left: 2px solid #30363d; }
+      .pipeline { position: relative; padding-left: 2rem; margin-bottom: 5rem; }
+      .pipeline::before { content: ""; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: #30363d; }
       .stage { position: relative; margin-bottom: 3rem; }
       .stage::before { content: ""; position: absolute; left: -2.35rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-color); border: 2px solid var(--primary-glow); box-shadow: 0 0 10px var(--primary-glow); }
       .stage-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-      .stage-title { font-family: var(--font-mono); color: #fff; }
+      .stage-title { font-family: var(--font-mono); color: #fff; font-weight: 600; }
       .stage-company { color: var(--secondary-glow); }
-      .stage-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); background: var(--surface-color); padding: 0.2rem 0.6rem; border-radius: 4px; }
+      .stage-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); background: var(--surface-color); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid #30363d; }
       .stage-details { list-style: none; padding-left: 0; }
-      .stage-details li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+      .stage-details li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main); }
       .stage-details li::before { content: ">"; position: absolute; left: 0; color: var(--primary-glow); font-family: var(--font-mono); }
 
       footer { text-align: center; padding: 2rem 0; border-top: 1px solid #30363d; font-family: var(--font-mono); color: var(--text-muted); }
 
-      /* Mobile Adjustments */
       @media (max-width: 850px) {
-        .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+        .hero { flex-direction: column-reverse; text-align: center; }
         .hero h1 { font-size: 2.5rem; }
-        .image-wrapper { width: 220px; height: 220px; }
+        .image-wrapper { width: 200px; height: 200px; margin: 0 auto; }
         .nav-links { display: none; }
         .stage-header { flex-direction: column; gap: 0.5rem; }
       }
@@ -212,7 +197,7 @@
 
       <section class="hero">
         <div class="hero-content">
-          <p class="terminal-prompt" id="last-login">Last login: Fri Feb 20 2026</p>
+          <p class="terminal-prompt">Last login: Fri Feb 20 2026</p>
           <h1>Hi, I'm <span class="highlight">Phyo Khant</span></h1>
           <h2><span class="typing-text">Junior DevOps Engineer</span></h2>
           <p style="margin-bottom: 2rem; max-width: 600px; color: var(--text-muted);">
@@ -227,7 +212,7 @@
 
         <div class="hero-image">
           <div class="image-wrapper">
-            <img src="https://via.placeholder.com/300" alt="Phyo Khant Profile">
+            <img src="Image.jpeg">
           </div>
         </div>
       </section>
@@ -241,15 +226,22 @@
           </div>
           <div class="code-content">
             <pre>
-<span class="comment"># DevOps Engineer Profile</span>
+<span class="comment"># DevOps Engineer Configuration</span>
 <span class="key">apiVersion</span>: v1
+<span class="key">kind</span>: EngineerProfile
 <span class="key">metadata</span>:
   <span class="key">name</span>: <span class="string">"Phyo Khant"</span>
   <span class="key">location</span>: <span class="string">"Yangon, Myanmar"</span>
 <span class="key">spec</span>:
-  <span class="key">focus</span>: [<span class="string">"Automation"</span>, <span class="string">"CI/CD"</span>, <span class="string">"Cloud"</span>]
-  <span class="key">summary</span>: <span class="string">"Bridging development and operations to create 
-           scalable and reliable systems."</span>
+  <span class="key">focus</span>: [<span class="string">"Automation"</span>, <span class="string">"Cloud Infrastructure"</span>, <span class="string">"CI/CD Pipelines"</span>]
+  <span class="key">contact</span>:
+    <span class="key">phone</span>: <span class="string">"+959788389027"</span>
+    <span class="key">email</span>: <span class="string">"phyokhant.info.personal@gmail.com"</span>
+  <span class="key">summary</span>: >
+    <span class="string">I enjoy bridging the gap between development and operations 
+    to create efficient, reliable, and scalable systems. With 
+    hands-on experience in AWS, scripting, and monitoring, 
+    I continuously improve deployment workflows.</span>
             </pre>
           </div>
         </div>
@@ -264,6 +256,10 @@
           <div class="skill-tag"><i class="fa-brands fa-gitlab"></i> GitLab CI/CD</div>
           <div class="skill-tag"><i class="fa-brands fa-linux"></i> Linux</div>
           <div class="skill-tag"><i class="fa-solid fa-terminal"></i> Bash/Python</div>
+          <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> MS Sentinel</div>
+          <div class="skill-tag"><i class="fa-solid fa-shield-halved"></i> MS Defender</div>
+          <div class="skill-tag"><i class="fa-solid fa-server"></i> Nginx</div>
+          <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> Data Center Infra</div>
         </div>
       </section>
 
@@ -276,17 +272,32 @@
               <div class="stage-date">2025 – Present</div>
             </div>
             <ul class="stage-details">
-              <li>Manage and automate CI/CD pipelines using GitLab.</li>
-              <li>Maintain scalable cloud infrastructure on AWS.</li>
+              <li>Manage and automate CI/CD pipelines using GitLab CI/CD and AWS services.</li>
+              <li>Maintain scalable and reliable cloud infrastructure.</li>
+              <li>Develop Python scripts for AWS cost reporting and operational monitoring.</li>
+              <li>Collaborate with teams to streamline deployments and improve performance.</li>
             </ul>
           </div>
+
           <div class="stage">
             <div class="stage-header">
               <div class="stage-title">SOC Level-1 (Blue Team) <span class="stage-company">@ AYA Bank</span></div>
               <div class="stage-date">2024 – 2025</div>
             </div>
             <ul class="stage-details">
-              <li>Incident response using MS Sentinel and Defender.</li>
+              <li>Monitored and responded to security incidents using Microsoft Sentinel and Defender.</li>
+              <li>Performed alert analysis, threat detection, and incident escalation.</li>
+            </ul>
+          </div>
+
+          <div class="stage">
+            <div class="stage-header">
+              <div class="stage-title">Data Center Engineer <span class="stage-company">@ AYA Bank</span></div>
+              <div class="stage-date">2023 – 2025</div>
+            </div>
+            <ul class="stage-details">
+              <li>Maintained CRAC cooling, power supply, fire alarm, and generators.</li>
+              <li>Managed monitoring systems (UPS, VDC, Poseidon) ensuring high uptime.</li>
             </ul>
           </div>
         </div>
