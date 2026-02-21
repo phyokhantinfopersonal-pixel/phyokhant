@@ -342,7 +342,7 @@
           hour12: false 
         };
         const formattedDate = now.toLocaleString('en-US', options).replace(/,/g, '');
-        document.getElementById('last-login-time').innerText = `Last login: ${formattedDate} on ttys000`;
+        document.getElementById('last-login-time').innerText = `Last login: ${formattedDate}`;
       }
       
       updateLoginTime();
