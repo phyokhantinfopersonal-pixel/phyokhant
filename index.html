@@ -31,10 +31,6 @@
         box-sizing: border-box;
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
-
       body {
         background-color: var(--bg-color);
         color: var(--text-main);
@@ -42,8 +38,8 @@
         line-height: 1.6;
         overflow-x: hidden;
         background-image: linear-gradient(
-            rgba(13, 17, 23, 0.92),
-            rgba(13, 17, 23, 0.92)
+            rgba(13, 17, 23, 0.9),
+            rgba(13, 17, 23, 0.9)
           ),
           linear-gradient(90deg, #161b22 1px, transparent 1px),
           linear-gradient(#161b22 1px, transparent 1px);
@@ -64,23 +60,18 @@
         padding: 1rem 0;
         border-bottom: 1px solid #30363d;
         margin-bottom: 4rem;
-        position: sticky;
-        top: 0;
-        background: rgba(13, 17, 23, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 100;
       }
 
-      .logo { font-family: var(--font-mono); color: var(--primary-glow); font-size: 1.1rem; }
+      .logo { font-family: var(--font-mono); color: var(--primary-glow); font-size: 1.2rem; }
       .nav-links a {
-        color: var(--text-muted);
+        color: var(--text-main);
         text-decoration: none;
         margin-left: 2rem;
         font-family: var(--font-mono);
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         transition: 0.3s;
       }
-      .nav-links a:hover { color: var(--primary-glow); text-shadow: 0 0 8px var(--primary-glow); }
+      .nav-links a:hover { color: var(--primary-glow); }
 
       /* Hero Section */
       .hero {
@@ -88,8 +79,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 3rem;
-        margin-bottom: 8rem;
-        padding-top: 2rem;
+        margin-bottom: 5rem;
       }
 
       .hero-content { flex: 1; }
@@ -107,12 +97,7 @@
         border-radius: 20px;
         padding: 5px;
         background: linear-gradient(45deg, var(--primary-glow), var(--secondary-glow));
-        box-shadow: 0 0 40px rgba(0, 255, 204, 0.15);
-        transition: transform 0.5s ease;
-      }
-      
-      .image-wrapper:hover {
-        transform: translateY(-10px) rotate(2deg);
+        box-shadow: 0 0 30px rgba(0, 255, 204, 0.15);
       }
 
       .image-wrapper img {
@@ -124,14 +109,9 @@
         display: block;
       }
 
-      .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 0.5rem; font-family: var(--font-mono); line-height: 1.1; }
+      .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; font-family: var(--font-mono); }
       .hero h2 { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 2rem; min-height: 1.6em; }
       
-      .highlight {
-        color: var(--primary-glow);
-        text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-      }
-
       .typing-text {
         display: inline-block;
         overflow: hidden;
@@ -153,46 +133,42 @@
 
       .btn-primary {
         display: inline-block;
-        padding: 0.9rem 1.8rem;
+        padding: 0.8rem 1.5rem;
         color: var(--primary-glow);
         font-family: var(--font-mono);
         text-decoration: none;
         border: 1px solid var(--primary-glow);
         border-radius: 4px;
-        transition: all 0.3s ease;
-        background: rgba(0, 255, 204, 0.02);
+        transition: 0.3s;
       }
       .btn-primary:hover {
         background: rgba(0, 255, 204, 0.1);
-        box-shadow: 0 0 25px rgba(0, 255, 204, 0.2);
-        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
       }
 
-      /* Sections */
-      .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; display: flex; align-items: center; font-family: var(--font-mono); }
-      .section-title::before { content: "0" counter(section) "."; counter-increment: section; color: var(--primary-glow); margin-right: 12px; font-size: 1.2rem; }
-      body { counter-reset: section; }
+      /* Titles Style (Past Version) */
+      .section-title { font-size: 2rem; margin-bottom: 2rem; display: flex; align-items: center; }
+      .section-title::before { content: "./"; color: var(--primary-glow); margin-right: 10px; }
 
-      /* Code Window Enhancements */
+      /* Code Window Responsive Fix */
       .code-window { 
         background: var(--surface-color); 
-        border-radius: 12px; 
+        border-radius: 8px; 
         border: 1px solid #30363d; 
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
         max-width: 100%;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       }
 
-      .window-header { background: #010409; padding: 0.8rem 1.2rem; display: flex; align-items: center; border-bottom: 1px solid #30363d; }
+      .window-header { background: #010409; padding: 0.8rem 1rem; display: flex; align-items: center; border-bottom: 1px solid #30363d; }
       .dot { height: 12px; width: 12px; border-radius: 50%; margin-right: 8px; }
       .dot.red { background: #ff5f56; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #27c93f; }
       
       .code-content { 
         padding: 1.5rem; 
         font-family: var(--font-mono); 
-        font-size: 0.9rem; 
-        line-height: 1.8;
+        font-size: 0.95rem; 
+        line-height: 1.7;
         overflow-x: auto;
         white-space: pre;
       }
@@ -200,147 +176,120 @@
       .code-content::-webkit-scrollbar { height: 6px; }
       .code-content::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
 
-      .key { color: #ff7b72; } .string { color: #a5d6ff; } .comment { color: #8b949e; font-style: italic; }
+      .key { color: #ff7b72; } .string { color: #a5d6ff; } .comment { color: #8b949e; }
 
-      /* Skills Grid Enhancements */
-      .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 6rem; }
-      .skill-tag { 
-        background: rgba(22, 27, 34, 0.5); 
-        border: 1px solid #30363d; 
-        padding: 1rem; 
-        border-radius: 8px; 
-        font-family: var(--font-mono); 
-        display: flex; 
-        flex-direction: column;
-        align-items: center; 
-        gap: 10px; 
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        text-align: center;
-      }
-      .skill-tag i { font-size: 1.5rem; color: var(--text-muted); transition: 0.3s; }
-      .skill-tag:hover { 
-        border-color: var(--primary-glow); 
-        transform: translateY(-5px); 
-        background: rgba(0, 255, 204, 0.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      }
-      .skill-tag:hover i { color: var(--primary-glow); transform: scale(1.1); }
+      /* Skills Tags (Past Version) */
+      .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 5rem; }
+      .skill-tag { background: var(--surface-color); border: 1px solid #30363d; padding: 0.7rem 1.2rem; border-radius: 4px; font-family: var(--font-mono); display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+      .skill-tag:hover { border-color: var(--primary-glow); transform: translateY(-3px); }
 
-      /* Experience Pipeline Enhancements */
-      .pipeline { position: relative; padding-left: 2.5rem; margin-bottom: 6rem; }
-      .pipeline::before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--primary-glow), #30363d); }
-      .stage { position: relative; margin-bottom: 4rem; }
-      .stage::before { 
-        content: ""; 
-        position: absolute; 
-        left: -2.35rem; 
-        top: 5px; 
-        width: 16px; 
-        height: 16px; 
-        border-radius: 50%; 
-        background: var(--bg-color); 
-        border: 2px solid var(--primary-glow); 
-        box-shadow: 0 0 12px var(--primary-glow); 
-        z-index: 2;
-      }
-      .stage-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 10px; }
-      .stage-title { font-family: var(--font-mono); color: #fff; font-size: 1.2rem; }
-      .stage-company { color: var(--secondary-glow); display: block; font-size: 0.95rem; margin-top: 4px; }
-      .stage-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary-glow); background: rgba(0, 255, 204, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(0, 255, 204, 0.2); }
+      /* Experience Pipeline (Past Version) */
+      .pipeline { position: relative; padding-left: 2rem; margin-bottom: 5rem; }
+      .pipeline::before { content: ""; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px; background: #30363d; }
+      .stage { position: relative; margin-bottom: 3rem; }
+      .stage::before { content: ""; position: absolute; left: -2.35rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-color); border: 2px solid var(--primary-glow); box-shadow: 0 0 10px var(--primary-glow); }
+      .stage-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+      .stage-title { font-family: var(--font-mono); color: #fff; font-weight: 600; }
+      .stage-company { color: var(--secondary-glow); }
+      .stage-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); background: var(--surface-color); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid #30363d; }
       .stage-details { list-style: none; padding-left: 0; }
-      .stage-details li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; color: var(--text-muted); font-size: 0.95rem; }
-      .stage-details li::before { content: "→"; position: absolute; left: 0; color: var(--primary-glow); }
+      .stage-details li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main); }
+      .stage-details li::before { content: ">"; position: absolute; left: 0; color: var(--primary-glow); font-family: var(--font-mono); }
 
-      footer { text-align: center; padding: 4rem 0; border-top: 1px solid #30363d; font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-muted); }
+      footer { text-align: center; padding: 2rem 0; border-top: 1px solid #30363d; font-family: var(--font-mono); color: var(--text-muted); }
 
       @media (max-width: 850px) {
-        .hero { flex-direction: column-reverse; text-align: center; gap: 2.5rem; margin-bottom: 5rem; }
-        .image-wrapper { width: 200px; height: 200px; margin: 0 auto; }
+        .hero { flex-direction: column-reverse; text-align: center; }
+        .hero h1 { font-size: 2.5rem; }
+        .image-wrapper { width: 220px; height: 220px; margin: 0 auto; }
         .nav-links { display: none; }
-        .stage-header { flex-direction: column; }
-        .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        .stage-header { flex-direction: column; gap: 0.5rem; }
       }
     </style>
   </head>
   <body>
     <div class="container">
       <nav>
-        <div class="logo">phyokhant@devops:~$ <span id="cursor">_</span></div>
+        <div class="logo">phyokhant@devops:~$</div>
         <div class="nav-links">
-          <a href="#about">// about</a>
-          <a href="#skills">// skills</a>
-          <a href="#experience">// experience</a>
+          <a href="#about">cat about.md</a>
+          <a href="#skills">ls -l skills/</a>
+          <a href="#experience">git log</a>
         </div>
       </nav>
 
       <section class="hero">
         <div class="hero-content">
-          <p class="terminal-prompt" id="login-time" style="font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
-            Last login: Loading...
-          </p>
+          <p class="terminal-prompt">Last login: Fri Feb 20 2026</p>
           <h1>Hi, I'm <span class="highlight">Phyo Khant</span></h1>
           <h2><span class="typing-text">Junior DevOps Engineer</span></h2>
-          <p style="margin-bottom: 2.5rem; max-width: 600px; color: var(--text-muted); font-size: 1.1rem;">
-            Specializing in cloud infrastructure automation, CI/CD orchestration, and high-availability systems. I build the pipelines that power modern software.
+          <p style="margin-bottom: 2rem; max-width: 600px; color: var(--text-muted);">
+            Passionate and detail-oriented engineer focused on automation, cloud
+            infrastructure, and CI/CD processes. I thrive on bridging the gap
+            between dev and ops.
           </p>
           <a href="mailto:phyokhant.info.personal@gmail.com" class="btn-primary">
-            <i class="fa-solid fa-paper-plane"></i> Initialize Contact
+            <i class="fa-solid fa-terminal"></i> root@hire-me.sh
           </a>
         </div>
 
         <div class="hero-image">
           <div class="image-wrapper">
-            <img src="Image.jpeg" alt="Phyo Khant Profile Image">
+            <img src="Image.jpeg" alt="Phyo Khant Profile">
           </div>
         </div>
       </section>
 
       <section id="about">
-        <h2 class="section-title">Who Am I</h2>
+        <h2 class="section-title">whoami</h2>
         <div class="code-window">
           <div class="window-header">
             <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-            <span style="margin-left: 12px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">profile.yaml</span>
+            <span style="margin-left: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">profile.yaml</span>
           </div>
           <div class="code-content">
-<span class="comment"># Personal Metadata</span>
+<span class="comment"># DevOps Engineer Configuration</span>
 <span class="key">apiVersion</span>: v1
-<span class="key">kind</span>: DevOpsEngineer
+<span class="key">kind</span>: EngineerProfile
 <span class="key">metadata</span>:
   <span class="key">name</span>: <span class="string">"Phyo Khant"</span>
   <span class="key">location</span>: <span class="string">"Yangon, Myanmar"</span>
 <span class="key">spec</span>:
-  <span class="key">focus</span>: [<span class="string">"Automation"</span>, <span class="string">"Cloud Native"</span>, <span class="string">"SecOps"</span>]
+  <span class="key">focus</span>: [<span class="string">"Automation"</span>, <span class="string">"Cloud Infrastructure"</span>, <span class="string">"CI/CD Pipelines"</span>]
   <span class="key">contact</span>:
     <span class="key">phone</span>: <span class="string">"+959788389027"</span>
     <span class="key">email</span>: <span class="string">"phyokhant.info.personal@gmail.com"</span>
   <span class="key">summary</span>: >
-    <span class="string">I bridge the gap between development and operations to 
-    create resilient, scalable systems. Experienced in AWS 
-    environments and GitLab CI/CD automation.</span></div>
+    <span class="string">I enjoy bridging the gap between development and operations 
+    to create efficient, reliable, and scalable systems. With 
+    hands-on experience in AWS, scripting, and monitoring, 
+    I continuously improve deployment workflows.</span>
+          </div>
         </div>
       </section>
 
       <section id="skills">
-        <h2 class="section-title">Technical Stack</h2>
+        <h2 class="section-title">tech_stack.json</h2>
         <div class="skills-grid">
-          <div class="skill-tag"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
-          <div class="skill-tag"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
-          <div class="skill-tag"><i class="fa-solid fa-dharmachakra"></i><span>Kubernetes</span></div>
-          <div class="skill-tag"><i class="fa-brands fa-gitlab"></i><span>GitLab CI</span></div>
-          <div class="skill-tag"><i class="fa-brands fa-linux"></i><span>Linux</span></div>
-          <div class="skill-tag"><i class="fa-solid fa-terminal"></i><span>Python/Bash</span></div>
-          <div class="skill-tag"><i class="fa-solid fa-shield-halved"></i><span>MS Sentinel</span></div>
-          <div class="skill-tag"><i class="fa-solid fa-server"></i><span>Nginx</span></div>
+          <div class="skill-tag"><i class="fa-brands fa-aws"></i> AWS</div>
+          <div class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</div>
+          <div class="skill-tag"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</div>
+          <div class="skill-tag"><i class="fa-brands fa-gitlab"></i> GitLab CI/CD</div>
+          <div class="skill-tag"><i class="fa-brands fa-linux"></i> Linux</div>
+          <div class="skill-tag"><i class="fa-solid fa-terminal"></i> Bash/Python</div>
+          <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> MS Sentinel</div>
+          <div class="skill-tag"><i class="fa-solid fa-shield-halved"></i> MS Defender</div>
+          <div class="skill-tag"><i class="fa-solid fa-server"></i> Nginx</div>
+          <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> Data Center Infra</div>
         </div>
       </section>
 
       <section id="experience">
-        <h2 class="section-title">Deployment History</h2>
+        <h2 class="section-title">git log --oneline</h2>
         <div class="pipeline">
           <div class="stage">
             <div class="stage-header">
-              <div class="stage-title">Junior DevOps Engineer <span class="stage-company">Abc Content Solution</span></div>
+              <div class="stage-title">Junior DevOps Engineer <span class="stage-company">@ Abc Content Solution</span></div>
               <div class="stage-date">2025 – Present</div>
             </div>
             <ul class="stage-details">
@@ -353,7 +302,7 @@
 
           <div class="stage">
             <div class="stage-header">
-              <div class="stage-title">SOC Level-1 (Blue Team) <span class="stage-company">AYA Bank</span></div>
+              <div class="stage-title">SOC Level-1 (Blue Team) <span class="stage-company">@ AYA Bank</span></div>
               <div class="stage-date">2024 – 2025</div>
             </div>
             <ul class="stage-details">
@@ -364,7 +313,7 @@
 
           <div class="stage">
             <div class="stage-header">
-              <div class="stage-title">Data Center Engineer <span class="stage-company">AYA Bank</span></div>
+              <div class="stage-title">Data Center Engineer <span class="stage-company">@ AYA Bank</span></div>
               <div class="stage-date">2023 – 2025</div>
             </div>
             <ul class="stage-details">
@@ -376,23 +325,8 @@
       </section>
 
       <footer>
-        <p style="margin-bottom: 10px;">phyo_khant@portfolio:~$ exit</p>
-        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Designed & Built by Phyo Khant</p>
+        <p>echo "© 2026 Phyo Khant"</p>
       </footer>
     </div>
-
-    <script>
-      // Automatically set the "Last Login" to the current date/time
-      const dateElement = document.getElementById('login-time');
-      const now = new Date();
-      const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-      dateElement.innerText = `Last login: ${now.toLocaleDateString('en-US', options)} from 127.0.0.1`;
-
-      // Simple cursor blink effect for the logo
-      const cursor = document.getElementById('cursor');
-      setInterval(() => {
-        cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-      }, 500);
-    </script>
   </body>
 </html>
